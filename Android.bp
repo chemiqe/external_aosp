@@ -1,0 +1,33 @@
+cc_binary {
+    name: "egl_image_test",
+    srcs: ["egl_image_test.cpp"],
+    shared_libs: [
+        "libEGL",
+        "libGLESv2",
+        "liblog",
+        "libandroid",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-typedef-redefinition",
+        "-std=c++17",
+    ],
+}
+
+cc_binary {
+    name: "test_camera",
+    srcs: ["test_camera.cpp"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    shared_libs: [
+        "libcamera2ndk",
+        "liblog",
+        "libutils",
+        "libnativewindow",
+    ],
+    stl: "c++_shared",
+}
+
